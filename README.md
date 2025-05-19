@@ -48,3 +48,17 @@ A real-time **Chat Application** built using the **MERN stack** (MongoDB, Expres
 
 ## 🏗️ Folder Structure
 
+client/ --> React Frontend
+├── src/
+│ ├── components/
+│ ├── redux/
+│ ├── pages/
+│ └── App.tsx
+
+server/ --> Express Backend
+├── controllers/
+├── models/
+├── routes/
+├── middlewares/
+└── server.js
+
