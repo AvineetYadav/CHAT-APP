@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+  }
+  
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+  }
+  
+  body {
+    @apply bg-light-100 text-light-900 dark:bg-dark-100 dark:text-dark-900 transition-colors;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  * {
+    @apply border-light-300 dark:border-dark-700;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-light-200 dark:bg-dark-300;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-light-400 dark:bg-dark-500 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-light-500 dark:bg-dark-600;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-500;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent hover:bg-light-200 dark:hover:bg-dark-300 focus:ring-light-300 dark:focus:ring-dark-700;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-dark-200 rounded-lg shadow-md border border-light-300 dark:border-dark-700;
+  }
+  
+  .input {
+    @apply px-4 py-2 bg-light-100 dark:bg-dark-300 border border-light-300 dark:border-dark-600 rounded-md 
+    focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+  
+  .badge {
+    @apply px-2 py-1 text-xs font-medium rounded-full;
+  }
+  
+  .badge-primary {
+    @apply bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200;
+  }
+  
+  .badge-secondary {
+    @apply bg-secondary-100 text-secondary-800 dark:bg-secondary-900 dark:text-secondary-200;
+  }
+  
+  .chat-message {
+    @apply p-3 rounded-lg max-w-[80%] mb-2 shadow-message hover:shadow-message-hover transition-shadow;
+  }
+  
+  .chat-message-sent {
+    @apply bg-primary-500 text-white ml-auto rounded-tr-none;
+  }
+  
+  .chat-message-received {
+    @apply bg-light-200 dark:bg-dark-300 text-light-900 dark:text-dark-900 mr-auto rounded-tl-none;
+  }
+}
